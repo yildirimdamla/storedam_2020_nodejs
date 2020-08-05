@@ -2,7 +2,7 @@ var mongoose = require("../Database/mongoose");
 const productManager = {
   Add: function (req, res) {
     var entity = new mongoose.Product();
-
+    entity.name = req.body.name;
     entity.creatingDate = new Date();
     entity.updatedDate = entity.creatingDate;
     entity.category = req.body.category;
@@ -13,6 +13,8 @@ const productManager = {
     entity.description = req.body.description;
     entity.tag = req.body.tag;
     entity.size = req.body.size;
+    entity.sort = req.body.sort;
+    entity.code = req.body.code;
 
     entity.save(function (entity) {
       res.send("Product saved successfully!");
