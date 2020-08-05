@@ -26,6 +26,7 @@ const ProductSchema = new Schema({
   creatingDate: { type: Date, default: Date.now },
   updatedDate: { type: Date, default: Date.now },
   isDeleted: { type: Boolean, default: false },
+  name: String,
   category: String,
   color: Array,
   unitprice: Number,
@@ -35,6 +36,7 @@ const ProductSchema = new Schema({
   tag: Array,
   size: Array,
   sort: Number,
+  code: String,
 });
 
 const Product = mongoose.model("Products", ProductSchema);
